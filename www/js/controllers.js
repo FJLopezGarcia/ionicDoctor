@@ -35,7 +35,8 @@ angular.module('docster.controllers', [])
                 //console.log(data);
                 $scope.doctors = data;
                 angular.forEach(data, function(value, key){
-                    console.log(value);
+                    $scope.placeMarker(value.lat, value.lon);
+                    
                 })
                 // this callback will be called asynchronously
                 // when the response is available
@@ -47,7 +48,6 @@ angular.module('docster.controllers', [])
             });
 
         $scope.doctorClick = function(docUID, route){
-            alert(docUID);
             docUIDService.uid = docUID;
             $location.path(route);
         }
@@ -66,6 +66,13 @@ angular.module('docster.controllers', [])
                 position:myCenter
             });
 
+            $scope.placeMarker = function(lat, lon){
+                var markerLoc = new google.maps.LatLng(lat,lon);
+                var marker=new google.maps.Marker({
+                    map: map,
+                    position:markerLoc
+                });
+            }
             marker.setMap(map);
         };
 

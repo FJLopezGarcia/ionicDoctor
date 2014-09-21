@@ -22,7 +22,10 @@
                             <div class="speciality"><p><strong>Speciality: </strong>{{profile.profile.speciality.name}}</p></div>
                             <div class="city-state"><p><strong>Address: </strong>123 ABC, Fremont, CA 94539</p></div>
                             <div class="phone"><p><strong>Phone: </strong>{{profile.phone}}</p></div>
-                            <div class="rating"><p><strong>Rating: </strong>{{profile.rating}}</p></div>
+                            <div class="rating"><p><strong>Rating: </strong>
+
+                                <rating ng-model="rate" max="max" readonly="isReadonly">
+                                {{profile.rating}}</rating></p></div>
                         </div>
                     </div>
                 </div>
