@@ -1,0 +1,71 @@
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <a class="button button-small icon-left ion-chevron-left button-clear button-dark" href="/locateDoctors"></a>
+        <a class="button button-icon icon ion-home pull-right" href="#/"></a>
+        <div style="margin-left: 70px"><img src="img/Logo-orig.png" style="height: 39px"/></div>
+    </ion-header-bar>
+    <ion-content>
+        <div>
+
+
+            <div class="panel panel-info" style="margin-bottom: 0">
+                <div class="panel-body">
+                    <div class="container-fixed">
+
+                        <div class="col-xs-6">
+                            <div class="profile-pic">
+                                <img src="{{profile.profile.img}}">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6" style="font-size: 11px">
+                            <div class="speciality"><p><strong>Speciality: </strong>{{profile.profile.speciality.name}}</p></div>
+                            <div class="city-state"><p><strong>Address: </strong>123 ABC, Fremont, CA 94539</p></div>
+                            <div class="phone"><p><strong>Phone: </strong>{{profile.phone}}</p></div>
+                            <div class="rating"><p><strong>Rating: </strong>{{profile.rating}}</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--buttons-->
+                <div class="panel-footer" style="height: 50px;">
+                    <div style="text-align: center;">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning">Prev</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-success">Schedule Appointment</button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-warning">Next</button>
+                        </div>
+                    </div>
+                </div>
+                <!--end buttons-->
+            </div>
+            <!--end container body-->
+
+            <!--Reviews-->
+            <div class="container-fixed panel panel-danger" style="border-top: 0px">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="text-align:center">Reviews</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="container-fixed">
+                        <ul class="list-group" >
+                            <ion-scroll>
+                                <li class="list-group-item">He's good.</li>
+                                <li class="list-group-item">He's ok.</li>
+                                <li class="list-group-item">He's bad.</li>
+                                <li class="list-group-item">He's good.</li>
+                                <li class="list-group-item">He's ok.</li>
+                                <li class="list-group-item">He's bad.</li>
+                            </ion-scroll>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-pane>

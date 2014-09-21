@@ -1,0 +1,44 @@
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <a class="button button-small icon-left ion-chevron-left button-clear button-dark" href="#body"></a>
+        <a class="button button-icon icon ion-home pull-right" href="#/"></a>
+            <div style="margin-left: 70px"><img src="img/Logo-orig.png" style="height: 39px"/></div>
+    </ion-header-bar>
+    <ion-content style=" ">
+        <div class="container">
+            <div class="row">
+                <img src="img/head.png" class="my-head" id="body-part" style="margin: auto;"/>
+            </div>
+            <ion-scroll zooming="false" direction="y" style="height: 300px;">
+                <div class="list list-inset" style="margin-top: 0px;">
+
+                    <div class="item" ng-click="headInjury('/locateDoctors')" style="text-align: center">
+                        Headache
+                    </div>
+
+                    <div class="item" style="text-align: center">
+                        Earache
+                    </div>
+
+                    <div class="item" style="text-align: center">
+                        Toothache
+                    </div>
+
+                    <div class="item" style="text-align: center">
+                        Blindness
+                    </div>
+
+                    <div class="item" style="text-align: center">
+                        Broken Face
+                    </div>
+
+                </div>
+            </ion-scroll>
+        </div>
+
+
+
+
+    </ion-content>
+
+</ion-pane>

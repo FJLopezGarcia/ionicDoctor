@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="starter">
+
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <a class="button button-small icon-left ion-chevron-left button-clear button-dark" href="body.html.old"></a>
+        <a class="button button-icon icon ion-home pull-right" href="index.html"><a/>
+        <div style="margin-left: 70px"><img src="img/Logo-orig.png" style="height: 39px"/></div>
+    </ion-header-bar>
+    <ion-content style="background-color: #5DC4FF ; ">
+        <div class="container">
+
+
+            <div class="row">
+                <img src="img/head.png" class="my-head" id="body-part" style="margin: auto;"/>
+            </div>
+            <ion-scroll zooming="false" direction="y" style="height: 300px;">
+            <div class="list list-inset" style="margin-top: 0px;">
+
+                <div class="item">
+                    Headache
+                </div>
+
+                <div class="item" style="text-">
+                    Earache
+                </div>
+
+                <div class="item">
+                    Toothache
+                </div>
+
+                <div class="item">
+                    Blindness
+                </div>
+
+                <div class="item">
+                    Broken Face
+                </div>
+
+            </div>
+            </ion-scroll>
+        </div>
+
+
+
+
+    </ion-content>
+
+</ion-pane>
+
+
+</body>
+</html>

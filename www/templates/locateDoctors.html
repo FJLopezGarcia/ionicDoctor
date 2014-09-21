@@ -1,0 +1,39 @@
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <a class="button button-small icon-left ion-chevron-left button-clear button-dark" href="#/head"></a>
+        <a class="button button-icon icon ion-home pull-right" href="#/"></a>
+        <div style="margin-left: 70px"><img src="img/Logo-orig.png" style="height: 39px"/></div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="container">
+            <div class="map-container">
+                <div id="googleMap" style="width: 380px;height:230px;"></div>
+            </div>
+            <br>
+            <ion-scroll zooming="false" direction="y" style="height: 300px;">
+                <div class="list list-inset" style="margin-top: 0px;" ">
+                    <div id="output" style="width:100%;padding:5px;">
+                        <div ng-repeat="doc in doctors">
+                        <div class="panel panel-default" id="{{doc.uid}}" ng-click="doctorClick('{{doc.uid}}','/docInfo')">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"  id="doctor1Name" style="max-width: 500px;">{{doc.name}}</h3>
+                            </div>
+                            <div class="panel-body container" style="">
+                                <div class="row" >
+                                    <div class="col col-50">
+                                        <div class="profile-pic"><img  style="display: inline-block" src="{{doc.img}}" style="height:100px"></div>
+                                    </div>
+                                    <div class="col col-50">
+                                        <div class="speciality"><strong>Speciality: </strong>{{doc.speciality.name}}</div>
+                                        <div class="rating"><strong>Rating: </strong>{{doc.rating}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-pane>

@@ -1,0 +1,7 @@
+/* Empty. Add your own CSS if you like */
+.map-container {
+    position: relative;
+    padding-bottom: 0.25%;
+    /*height: 0;*/
+    overflow: hidden;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+</head>
+
+<style>
+    .map-container {
+        position: relative;
+        padding-bottom: 0.25%;
+        /*height: 0;*/
+        overflow: hidden;
+    }
+
+    .big-pic {
+
+
+    }
+
+    #output{
+        border: 1px lightgray solid;
+        width: 500px;
+        height: 300px;
+        overflow-y: scroll;
+    }
+</style>
+<body ng-app="starter">
+
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <a class="button button-small icon-left ion-chevron-left button-clear button-dark" href="body.html.old"></a>
+        <a class="button button-icon icon ion-home pull-right" href="index.html"></a>
+            <div style="margin-left: 70px"><img src="img/Logo-orig.png" style="height: 39px"/></div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="container">
+            <div class="map-container">
+                <div id="googleMap" style="width: 380px;height:230px;"></div>
+            <div>
+            <br>
+            <ion-scroll zooming="false" direction="y" style="height: 300px;">
+                <div class="list list-inset" style="margin-top: 0px;">
+                    <div id="output" style="width:100%;padding:5px;">
+                        <div class="panel panel-default" id="doctor1">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" id="doctor1Name" style="max-width: 500px;">First Lastname</h3>
+                            </div>
+                            <div class="panel-body container" style="">
+                                <div class="row">
+                                <div class="col col-50">
+                                    <div class="profile-pic"><img  style="display: inline-block"src="time%20pressure%20and%20competition.jpg" style="height:100px"></div>
+                                </div>
+                                <div class="col col-50">
+                                    <div class="speciality">Speciality: OBGYN</div>
+                                    <div class="city-state">City: Fremont, CA</div>
+                                    <div class="rating">Rating: *****</div>
+                                </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+
+
+
+
+    </ion-content>
+
+</ion-pane>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDHJZHzZ-WN7T7nQ3Sx9Lxwtpqe54OdkC0"></script>
+<script src="js/choose-google-maps.js"></script>
+</body>
+</html>
