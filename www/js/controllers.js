@@ -25,6 +25,8 @@ angular.module('docster.controllers', [])
     .controller('locateCtrl', function($scope, $location, $http, docUIDService){
 
             $scope.doctors = [];
+            $scope.uberPrice = [];
+            $scope.uberTime = [];
             $http({
                 url: 'https://docsterch.herokuapp.com/api/condition',
                 method: "POST",
@@ -36,7 +38,37 @@ angular.module('docster.controllers', [])
                 $scope.doctors = data;
                 angular.forEach(data, function(value, key){
                     $scope.placeMarker(value.lat, value.lon);
-                    
+                    $http({
+                        url: 'https://docsterch.herokuapp.com/api/estimate',
+                        method: "POST",
+                        headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
+                        data: "start_latitude=37.7833&start_longitude=-122.4167&end_latitude="+value.lat+"&end_longitude="+value.lon
+                    })
+                    .success(function(data, status, headers, config) {
+                        $scope.uberPrice.push(data.prices[0]);
+                    })
+                    .error(function(data, status, headers, config) {
+                        console.log(data);
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                    });
+                    $http({
+                        url: 'https://docsterch.herokuapp.com/api/time',
+                        method: "POST",
+                        headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
+                        data: "start_latitude=37.7833&start_longitude=-122.4167"
+                    })
+                    .success(function(data, status, headers, config) {
+                        //console.log(data.times[0]);
+                        $scope.min = (parseInt(data.times[0].estimate) /60).toFixed(2);
+                        console.log($scope.min);
+                        $scope.uberTime.push($scope.min);
+                    })
+                    .error(function(data, status, headers, config) {
+                        console.log(data);
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                    });
                 })
                 // this callback will be called asynchronously
                 // when the response is available

@@ -33,7 +33,7 @@ angular.module('docster', ['ionic', 'docster.controllers'])
         $stateProvider
 
             .state('welcome', {
-                url: "/",
+                url: "/welcome",
                 templateUrl: "templates/welcome.html",
                 controller: 'welcomeCtrl'
             })
@@ -58,6 +58,6 @@ angular.module('docster', ['ionic', 'docster.controllers'])
                 controller: "docCtrl"
             })
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/body');
 
     });
